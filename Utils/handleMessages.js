@@ -3,7 +3,7 @@ import { client, botOwner } from "../index.js";
 
 const handleMessages = async (message) => {
   if (message.isGroupMsg === false) {
-    switch (message.body.toLowerCase()) {
+    switch (message?.body?.toLowerCase()) {
       case "hi":
         client.reply(message.from, "sup", message.id);
         break;
