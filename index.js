@@ -5,7 +5,7 @@ let client;
 const botOwner = `${process.env.BOT_OWNER}@c.us`;
 
 const start = async () => {
-  client = await venom.create({ session: "aternos" });
+  client = await venom.create({ session: "aternos", headless: "new" });
   process.on("SIGINT", function () {
     client.close();
   });
