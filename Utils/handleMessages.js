@@ -14,10 +14,7 @@ const handleMessages = async (message) => {
       client.reply(sender, await getServersList(), message.id);
       break;
     default:
-      console.log(typeof message.mentionedJidList);
-      if (
-        message.mentionedJidList.some((jid) => jid.includes("212665715774"))
-      ) {
+      if ("212665715774@c.us" in message.mentionedJidList) {
         client.sendMentioned(sender, "@everyone", sender);
         client.sendPhotoVideoViaTyping(
           sender,
