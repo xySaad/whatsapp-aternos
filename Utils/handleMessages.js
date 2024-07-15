@@ -14,6 +14,7 @@ const handleMessages = async (message) => {
       client.reply(sender, await getServersList(), message.id);
       break;
     default:
+      fromGrp ? console.log(message) : null;
       switch (true) {
         case msg.mentionedJidList.includes("212665715774"):
           client.sendPhotoVideoViaTyping(
@@ -25,7 +26,6 @@ const handleMessages = async (message) => {
         default:
           break;
       }
-      fromGrp ? console.log(message) : null;
       break;
   }
 };
