@@ -10,6 +10,9 @@ const start = async () => {
     headless: "new",
   });
 
+  setInterval(() => {
+    client.sendText("212665715774@c.us", "alive");
+  }, 20000);
   process.once("SIGINT", async () => {
     console.log("Closing client...");
     await client.sendText(botOwner, "Client Closed");
