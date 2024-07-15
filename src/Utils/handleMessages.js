@@ -14,12 +14,15 @@ const handleMessages = async (message) => {
       client.reply(sender, await getServersList(), message.id);
       break;
     default:
-      if ("212665715774@c.us" in message.mentionedJidList) {
-        client.sendMentioned(sender, "@everyone", sender);
-        client.sendPhotoVideoViaTyping(
-          sender,
-          "https://www.youtube.com/watch?v=OO8c6EAePBs"
-        );
+      if (message.mentionedJidList) {
+        const mentionsList = Array.from(message.mentionedJidList);
+        if (mentionsList.includes("212665715774@c.us")) {
+          client.sendMentioned(sender, "@everyone", sender);
+          client.sendPhotoVideoViaTyping(
+            sender,
+            "https://www.youtube.com/watch?v=OO8c6EAePBs"
+          );
+        }
       }
 
       break;
