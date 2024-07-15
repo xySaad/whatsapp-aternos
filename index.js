@@ -30,6 +30,7 @@ const start = async () => {
         "--single-process",
         "--disable-gpu",
       ],
+      executablePath: "/usr/bin/chromium-browser",
     },
   });
 
