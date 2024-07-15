@@ -14,6 +14,17 @@ const handleMessages = async (message) => {
       client.reply(sender, await getServersList(), message.id);
       break;
     default:
+      switch (true) {
+        case msg.mentionedJidList.contains("212665715774"):
+          client.sendPhotoVideoViaTyping(
+            sender,
+            "https://www.youtube.com/watch?v=OO8c6EAePBs"
+          );
+          break;
+
+        default:
+          break;
+      }
       fromGrp ? console.log(message) : null;
       break;
   }

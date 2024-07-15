@@ -6,13 +6,13 @@ const botOwner = `${process.env.BOT_OWNER}@c.us`;
 
 const start = async () => {
   client = await venom.create({ session: "aternos", headless: "new" });
-  process.once("SIGINT", async () => {
-    console.log("Closing client...");
-    await client.sendText(botOwner, "Client Closed");
-    await client.close();
-    console.log("Client closed.");
-    process.exit(0); // Exit the process after closing the client
-  });
+  // process.once("SIGINT", async () => {
+  //   console.log("Closing client...");
+  //   await client.sendText(botOwner, "Client Closed");
+  //   await client.close();
+  //   console.log("Client closed.");
+  //   process.exit(0); // Exit the process after closing the client
+  // });
 
   client.sendText(botOwner, "Bot Started");
   client.onMessage(handleMessages);
