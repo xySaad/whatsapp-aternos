@@ -15,7 +15,7 @@ const handleMessages = async (message) => {
       break;
     default:
       switch (true) {
-        case msg.mentionedJidList.contains("212665715774"):
+        case msg.mentionedJidList.includes("212665715774"):
           client.sendPhotoVideoViaTyping(
             sender,
             "https://www.youtube.com/watch?v=OO8c6EAePBs"
