@@ -14,14 +14,16 @@ const handleMessages = async (message) => {
       client.reply(sender, await getServersList(), message.id);
       break;
     default:
-      fromGrp ? console.log(message) : null;
+      // fromGrp ? console.log(message) : null;
+      console.log(msg.mentionedJidList);
+
       switch (true) {
-        case msg.mentionedJidList.includes("212665715774"):
-          client.sendPhotoVideoViaTyping(
-            sender,
-            "https://www.youtube.com/watch?v=OO8c6EAePBs"
-          );
-          break;
+        // case msg.mentionedJidList.includes("212665715774"):
+        //   client.sendPhotoVideoViaTyping(
+        //     sender,
+        //     "https://www.youtube.com/watch?v=OO8c6EAePBs"
+        //   );
+        //   break;
 
         default:
           break;

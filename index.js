@@ -5,7 +5,12 @@ let client;
 const botOwner = `${process.env.BOT_OWNER}@c.us`;
 
 const start = async () => {
-  client = await venom.create({ session: "aternos", headless: "new" });
+  client = await venom.create({
+    session: "aternos",
+    headless: true,
+    useChrome: false,
+    browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   process.once("SIGINT", async () => {
     console.log("Closing client...");
     await client.sendText(botOwner, "Client Closed");
