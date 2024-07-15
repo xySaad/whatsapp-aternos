@@ -11,6 +11,7 @@ const start = async () => {
     useChrome: false,
     browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+
   process.once("SIGINT", async () => {
     console.log("Closing client...");
     await client.sendText(botOwner, "Client Closed");

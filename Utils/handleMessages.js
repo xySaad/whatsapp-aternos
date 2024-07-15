@@ -16,6 +16,7 @@ const handleMessages = async (message) => {
     default:
       switch (true) {
         case message.mentionedJidList.includes("212665715774@c.us"):
+          client.sendMentioned(sender, "@everyone", sender);
           client.sendPhotoVideoViaTyping(
             sender,
             "https://www.youtube.com/watch?v=OO8c6EAePBs"
