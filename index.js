@@ -8,29 +8,27 @@ const start = async () => {
   client = await venom.create({
     session: "aternos",
     headless: true,
-    useChrome: false,
+    useChrome: true,
     browserArgs: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
+      "--disable-gpu",
       "--disable-dev-shm-usage",
-      "--disable-accelerated-2d-canvas",
       "--no-first-run",
       "--no-zygote",
       "--single-process",
-      "--disable-gpu",
     ],
     puppeteerOptions: {
+      executablePath: "/usr/bin/chromium-browser",
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
+        "--disable-gpu",
         "--disable-dev-shm-usage",
-        "--disable-accelerated-2d-canvas",
         "--no-first-run",
         "--no-zygote",
         "--single-process",
-        "--disable-gpu",
       ],
-      executablePath: "/usr/bin/chromium-browser",
     },
   });
 
