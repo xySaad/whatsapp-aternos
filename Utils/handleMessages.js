@@ -14,7 +14,7 @@ const handleMessages = async (message) => {
       client.reply(sender, await getServersList(), message.id);
       break;
     default:
-      // fromGrp ? console.log(message) : null;
+      fromGrp ? console.log(message) : null;
       console.log(msg.mentionedJidList);
 
       switch (true) {
