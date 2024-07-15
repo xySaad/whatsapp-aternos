@@ -7,29 +7,7 @@ const botOwner = `${process.env.BOT_OWNER}@c.us`;
 const start = async () => {
   client = await venom.create({
     session: "aternos",
-    headless: true,
-    useChrome: true,
-    browserArgs: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-gpu",
-      "--disable-dev-shm-usage",
-      "--no-first-run",
-      "--no-zygote",
-      "--single-process",
-    ],
-    puppeteerOptions: {
-      executablePath: "/usr/bin/chromium-browser",
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-gpu",
-        "--disable-dev-shm-usage",
-        "--no-first-run",
-        "--no-zygote",
-        "--single-process",
-      ],
-    },
+    headless: "new",
   });
 
   process.once("SIGINT", async () => {
