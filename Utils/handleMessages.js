@@ -16,6 +16,7 @@ const handleMessages = async (message) => {
     default:
       switch (true) {
         case message.mentionedJidList.includes("212665715774"):
+          client.reply(sender, "?", message.id)
           client.sendPhotoVideoViaTyping(
             sender,
             "https://www.youtube.com/watch?v=OO8c6EAePBs"
