@@ -11,6 +11,7 @@ const handleMessages = async (message) => {
         break;
     }
   } else {
+    console.log(message);
   }
   switch (message.body.toLowerCase()) {
     case "list":
